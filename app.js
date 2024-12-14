@@ -19,7 +19,19 @@ const thumbnailContainer = document.getElementById("Thumbnail-container");
 //I want to resuse this function for all my images --> I need parameters
 
 function createThumbnails(imagesArray) {
-    //I need to create more than one thumbnail --> I can use a loop
+  for(let i = 0, i <= images.length, i++) {
+    console.log(images[i])
+    const thumbnail = document.createElement("img")
+    thumbnail.width = 30;
+    thumbnail.height = 30;
+    thumbnail.src = [i];
+    thumbnail.alt = [i];
+    thumbnail.appendChild(thumbnailContainer);
+
+  }
+}
+
+   //I need to create more than one thumbnail --> I can use a loop
     //You can use different ways to loop thorugh your array: for loop / forEach()
     //Inside the loop, we have a few steps to do:
     //create an image element
@@ -28,7 +40,7 @@ function createThumbnails(imagesArray) {
     //we also need to assign a value to the className property
     //we need add an event to the image elements we are creating here
     //we need to append the images to the thumbnail container
-  }
+  
   createThumbnails(images);
   
   //!commit your work!
