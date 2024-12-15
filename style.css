@@ -3,3 +3,10 @@
     /* * {
         background-color:burlywood;
     } */
+
+    #Thumbnail-container {
+          border-radius: 10px;
+          height: 30px;
+          width: auto;
+    }
+    /* ^Doesn't do anything (crying emoji) */

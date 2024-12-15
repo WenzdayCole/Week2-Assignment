@@ -1,7 +1,7 @@
 console.log("Test...this will be a shambles")
 
-const images = [
-    {src: "https://images.unsplash.com/photo-1733173523386-3006dec1a835?q=80&w=1810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "A picturesque scene of a sun set, with the sun raise bouncing of the side of a grand mountain range."}
+const images= [
+    {src: "https://images.unsplash.com/photo-1733173523386-3006dec1a835?q=80&w=1810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "A picturesque scene of a sun set, with the sun raise bouncing of the side of a grand mountain range."},
     {src: "https://images.unsplash.com/photo-1732901812656-1e3c79d414f7?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "A lone hut on a thick blanket of snow, in front of a dense pine forest."}
 ]
 
@@ -14,22 +14,31 @@ const images = [
 //I need to select both the thumbnail container and the large image container
 
 const thumbnailContainer = document.getElementById("Thumbnail-container");
+const largeImgContainer = document.getElementById("Large-image-container");
 
 //Since creating the thumbnail images takes more than one step, what is the best way to write a block of code? A function!
 //I want to resuse this function for all my images --> I need parameters
 
 function createThumbnails(imagesArray) {
-  for(let i = 0, i <= images.length, i++) {
-    console.log(images[i])
+  for(let i = 0; i < imagesArray.length; i++); {
+    console.log(imagesArray[i])
     const thumbnail = document.createElement("img")
     thumbnail.width = 30;
     thumbnail.height = 30;
     thumbnail.src = [i];
     thumbnail.alt = [i];
     thumbnail.appendChild(thumbnailContainer);
+    createThumbnails(imagesArray);
+    // not my own work, basically copied from the several different screenshots on Discord.
+    // Showed the intial one to my friend and he helped me fix it up a bit.
+    //initial one looked like this:
+    //function createThumbnails(imagesArray) {
+  // for(let i = 0, i <= images.length, i++) {
+  //   console.log(images[i])
 
-  }
-}
+  //!I DONT KNOW IF THIS DOES ANYTHING!! (crying emoji, crying emoji, crying emoji)
+    }
+   }
 
    //I need to create more than one thumbnail --> I can use a loop
     //You can use different ways to loop thorugh your array: for loop / forEach()
@@ -41,7 +50,7 @@ function createThumbnails(imagesArray) {
     //we need add an event to the image elements we are creating here
     //we need to append the images to the thumbnail container
   
-  createThumbnails(images);
+  
   
   //!commit your work!
   
